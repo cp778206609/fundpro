@@ -19,7 +19,7 @@ deploy = async() =>{
             不加前缀'0x'出错：UnhandledPromiseRejectionWarning: Error: The contract code couldn't be stored, please check your gas limit.
              */
             data:'0x'+bytecode,
-            arguments: ['Hello!The first smart contract!']
+            // arguments: ['Hello!The first smart contract!']
         }).send({
             from:accounts[0],
             gas: 3000000
