@@ -1,7 +1,7 @@
 pragma solidity ^0.4.17;
 
 contract FundingFactory {
-    // 存储所有已经部署的智能合约地址
+    // 存储所有已经部署的智能合约地址(test)
     address[] public fundings;
     function deploy(string _projectName,uint _supportMoney,uint _goalMoney) public {
         address funding = new Funding(_projectName, _supportMoney, _goalMoney, msg.sender);
