@@ -20,3 +20,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# new ignore
+deploy.js
+package.json
+package-lock.json
+.gitignore

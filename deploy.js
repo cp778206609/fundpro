@@ -3,8 +3,8 @@
 const Web3 = require('web3');
 const {interface,bytecode} = require("./compile");
 var HDWalletProvider = require("truffle-hdwallet-provider");
-var mnemonic = "patient eagle digital robust crane mention text shoe admit morning script special"; // 12 word mnemonic
-var provider = new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/2903c155ee254e42bde1ee3f83f77be5");
+var mnemonic = "ketchup divorce chief dutch inside found section myself grace pen cover half"; // 12 word mnemonic
+var provider = new HDWalletProvider(mnemonic, "\n" + "https://rinkeby.infura.io/v3/0d5f6edc936e41d1ad68666aaee37607");
 // Or, alternatively pass in a zero-based address index.
 //var provider = new HDWalletProvider(mnemonic, "http://localhost:8545", 5);
 const web3 = new Web3(provider);
@@ -19,15 +19,20 @@ deploy = async() =>{
             不加前缀'0x'出错：UnhandledPromiseRejectionWarning: Error: The contract code couldn't be stored, please check your gas limit.
              */
             data:'0x'+bytecode,
+            arguments:['fundpro_v1',1000000000,100000000000,'0x7598615Ae0Bd71E9D3CA951CAF10f0Ba5c1d48E4']
             // arguments: ['Hello!The first smart contract!']
+            // _projectName, _supportMoney, _goalMoney, msg.sender
         }).send({
             from:accounts[0],
-            gas: 3000000
+            gas:"3000000"
         });
     console.log('Address: '+result.options.address);
-
-    console.log('----------------');
     console.log(interface);
+    console.log('----------------');
+    console.log(result);
 };
-
+// process.on('unhandledRejection', (reason, p) => {
+//     console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
+//     // application specific logging, throwing an error, or other logic here
+// });
 deploy();
